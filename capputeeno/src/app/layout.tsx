@@ -2,6 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Saira } from "next/font/google";
 import Header from "./components/header";
+import { FiltersContextProvider } from "@/contexts/filterContexts";
 
 const saira = Saira({
   subsets: ["latin"],
@@ -21,8 +22,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={saira.className}>
-        <Header />
-        {children}
+        <FiltersContextProvider>
+          <Header />
+          {children}
+        </FiltersContextProvider>
       </body>
     </html>
   );

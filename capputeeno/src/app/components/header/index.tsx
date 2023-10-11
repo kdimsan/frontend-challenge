@@ -2,7 +2,7 @@ import { HeaderContainer, LogoHeader } from "./styles";
 import React from "react";
 
 import { Saira_Stencil_One } from "next/font/google";
-import { PrimaryInputWithIcon } from "../primaryInput";
+import { PrimaryInputWithIcon } from "./primaryInput";
 import CartItem from "../cart/cartItem";
 
 const sairaStencil = Saira_Stencil_One({ subsets: ["latin"], weight: ["400"] });
