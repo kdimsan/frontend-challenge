@@ -2,6 +2,7 @@
 import { styled } from "styled-components";
 import { SearchIcon } from "./searchIcon";
 import { InputHTMLAttributes } from "react";
+import { useFilter } from "@/hooks/useFilter";
 
 export const PrimaryInput = styled.input`
   display: flex;
@@ -38,9 +39,14 @@ const InputWithIcon = styled.div`
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {}
 
 export function PrimaryInputWithIcon(props: InputProps) {
+  const { search, setSearch } = useFilter();
   return (
     <InputWithIcon>
-      <PrimaryInput {...props} />
+      <PrimaryInput
+        {...props}
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+      />
       <SearchIcon />
     </InputWithIcon>
   );

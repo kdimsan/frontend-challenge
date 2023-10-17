@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import OpenFilterIcon from "./openPriorityFilter";
 import styled from "styled-components";
 import { useFilter } from "@/hooks/useFilter";
-import { PriorityType } from "@/types/priorityTypes";
+import { PriorityType } from "@/types/priorityType";
 
 const Container = styled.div`
   display: flex;
@@ -38,6 +38,9 @@ const FilterContent = styled.ul`
 
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   border-radius: 6px;
+  background-color: #fff;
+
+  z-index: 999;
 
   list-style: none;
 
@@ -79,7 +82,7 @@ export function FiltersByPriority() {
           <li onClick={() => handlePriority(PriorityType.LOW_HIGH)}>
             Preço: Menor - Maior
           </li>
-          <li onClick={() => handlePriority(PriorityType.BEST_SELLER)}>
+          <li onClick={() => handlePriority(PriorityType.POPULARITY)}>
             Mais vendidos
           </li>
         </FilterContent>

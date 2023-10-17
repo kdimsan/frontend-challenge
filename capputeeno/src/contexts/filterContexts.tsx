@@ -1,6 +1,6 @@
 "use client";
 import { FilterType } from "@/types/filterTypes";
-import { PriorityType } from "@/types/priorityTypes";
+import { PriorityType } from "@/types/priorityType";
 import React, { createContext, useState } from "react";
 
 export const FilterContext = createContext({
@@ -22,7 +22,7 @@ export function FiltersContextProvider({ children }: ProviderProps) {
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(0);
   const [type, setType] = useState(FilterType.ALL);
-  const [priority, setPriority] = useState(PriorityType.NEW);
+  const [priority, setPriority] = useState(PriorityType.POPULARITY);
 
   return (
     <FilterContext.Provider

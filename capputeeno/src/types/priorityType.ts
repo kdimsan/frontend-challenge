@@ -1,6 +1,6 @@
 export enum PriorityType {
   "NEW",
-  "BEST_SELLER",
+  "POPULARITY",
   "HIGH_LOW",
   "LOW_HIGH",
 }
