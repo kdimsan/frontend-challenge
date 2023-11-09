@@ -30,12 +30,12 @@ const Container = styled.div`
 `;
 
 export default function CartItem() {
-  const { value } = useLocalStorage("cart-items");
+  const { value } = useLocalStorage("cart-items", []);
 
   return (
     <Container>
       <CartIcon />
-      {value && <CartCount>{value.length}</CartCount>}
+      {value.length > 0 && <CartCount>{value.length}</CartCount>}
     </Container>
   );
 }

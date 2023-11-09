@@ -31,7 +31,6 @@ const mountQuery = (type: FilterType, priority: PriorityType) => {
 `;
   const prioritySettings = getFieldByPriority(priority);
   const categoryFilter = getCategoryByType(type);
-  console.log(categoryFilter);
 
   return `
   query{
