@@ -6,8 +6,9 @@ import { PriorityType } from "@/types/priorityType";
 
 const Container = styled.div`
   display: flex;
+  width: 100%;
   align-items: center;
-  justify-content: center;
+  justify-content: end;
 
   position: relative;
 
@@ -44,6 +45,8 @@ const FilterContent = styled.ul`
 
   list-style: none;
 
+  animation: topdown 0.3s ease;
+
   > li {
     font-family: inherit;
     font-weight: 400;
@@ -55,11 +58,20 @@ const FilterContent = styled.ul`
   > li + li {
     margin-top: 4px;
   }
+
+  @keyframes topdown {
+    0% {
+      top: 10%;
+    }
+    100% {
+      top: 100%;
+    }
+  }
 `;
 
 export function FiltersByPriority() {
   const [isOpen, setIsOpen] = useState(false);
-  const { priority, setPriority } = useFilter();
+  const { setPriority } = useFilter();
 
   const handleOpen = () => setIsOpen(!isOpen);
 
