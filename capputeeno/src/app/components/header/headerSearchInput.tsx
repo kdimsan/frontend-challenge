@@ -1,6 +1,6 @@
 "use client";
 import { styled } from "styled-components";
-import { SearchIcon } from "./searchIcon";
+import { SearchIcon } from "../icons/searchIcon";
 import { InputHTMLAttributes } from "react";
 import { useFilter } from "@/hooks/useFilter";
 

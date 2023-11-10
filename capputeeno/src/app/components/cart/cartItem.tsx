@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { CartIcon } from "./cartIcon";
+import { CartIcon } from "../icons/cartIcon";
 import { useLocalStorage } from "@/hooks/useLocalStorage";
 import { styled } from "styled-components";
 

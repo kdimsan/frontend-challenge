@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import OpenFilterIcon from "./openPriorityFilter";
+import OpenFilterIcon from "../icons/openPriorityFilter";
 import styled from "styled-components";
 import { useFilter } from "@/hooks/useFilter";
 import { PriorityType } from "@/types/priorityType";
