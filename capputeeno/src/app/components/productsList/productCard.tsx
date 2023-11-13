@@ -1,5 +1,6 @@
 import { ProductsInterface } from "@/types/productsInterface";
 import { formatValue } from "@/utils/priceFormatter";
+import { useRouter } from "next/navigation";
 import React from "react";
 import styled from "styled-components";
 
@@ -19,6 +20,8 @@ const Card = styled.div`
   background: rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(10px);
   border-radius: 0 0 4px 4px;
+
+  cursor: pointer;
 
   img {
     width: 256px;
@@ -62,9 +65,16 @@ const Card = styled.div`
 `;
 
 export default function ProductCard({ product, key }: ProductCardProps) {
+  const router = useRouter();
+
   const price = formatValue(product.price_in_cents);
+
+  const handleNavigate = () => {
+    router.push("/product?id=" + product.id);
+  };
+
   return (
-    <Card key={key}>
+    <Card onClick={handleNavigate} key={key}>
       <img src={product.image_url} alt={`"Product ${product.name} image"`} />
       <div>
         <h4>{product.name}</h4>
