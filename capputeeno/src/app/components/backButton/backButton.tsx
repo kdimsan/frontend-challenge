@@ -27,15 +27,11 @@ const Container = styled.button`
   }
 `;
 
-interface BackButtonProps {
-  navigate: string;
-}
-
-export default function BackButton({ navigate }: BackButtonProps) {
+export default function BackButton() {
   const router = useRouter();
 
   const handlePreviousPage = () => {
-    router.push(navigate);
+    router.back();
   };
   return (
     <Container onClick={handlePreviousPage}>

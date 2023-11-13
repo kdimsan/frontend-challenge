@@ -110,7 +110,7 @@ export default function Product({
   return (
     <DefaultPageStyle>
       <Container>
-        <BackButton navigate={"/"} />
+        <BackButton />
         <section>
           <img src={data?.image_url} alt={`Imagem do produto ${data?.name}`} />
           <TextContent>
