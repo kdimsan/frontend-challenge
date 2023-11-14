@@ -35,6 +35,7 @@ const Container = styled.div`
   @media (min-width: ${({ theme }) => theme.WSIZES.M}) {
     section {
       flex-direction: row;
+      align-items: normal;
 
       > img {
         max-width: 640px;
@@ -107,6 +108,36 @@ export default function Product({
 }) {
   const { data } = useProduct(searchParams.id);
 
+  const handleAddToCart = () => {
+    let cartItems = localStorage.getItem("cart-items");
+    if (cartItems) {
+      let cartItemsArray = JSON.parse(cartItems);
+
+      let existingItemIndex = cartItemsArray.findIndex(
+        (item: { id: string }) => item.id === searchParams.id
+      );
+
+      if (existingItemIndex != -1) {
+        cartItemsArray[existingItemIndex].quantity += 1;
+      } else {
+        cartItemsArray.push({ ...data, id: searchParams.id, quantity: 1 });
+      }
+
+      localStorage.setItem("cart-items", JSON.stringify(cartItemsArray));
+    } else {
+      localStorage.setItem(
+        "cart-items",
+        JSON.stringify([
+          {
+            ...data,
+            id: searchParams.id,
+            quantity: 1,
+          },
+        ])
+      );
+    }
+  };
+
   return (
     <DefaultPageStyle>
       <Container>
@@ -125,9 +156,8 @@ export default function Product({
               <h4>DESCRIÇÃO</h4>
               <p>{data?.description}</p>
             </div>
-
             <div>
-              <AddToCartBtn />
+              <AddToCartBtn onClick={handleAddToCart} />
             </div>
           </TextContent>
         </section>

@@ -54,6 +54,7 @@ export function useProducts() {
   const { data } = useQuery({
     queryFn: () => fetcher(query), //função que faz a busca na api.
     queryKey: ["products", type, priority], //Chave que passa para a requisição salvar. Recebe um nome para ser recuperado.
+    staleTime: 1000 * 60,
   });
 
   const products = data?.data.data.allProducts; //Axios adiciona mais um data devido a Promisse do axios.

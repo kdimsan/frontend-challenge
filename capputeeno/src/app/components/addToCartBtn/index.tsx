@@ -2,6 +2,10 @@ import React from "react";
 import BagWhite from "../icons/bagWhite";
 import styled from "styled-components";
 
+interface AddToCartBtnProps {
+  onClick: () => void;
+}
+
 const Container = styled.button`
   display: flex;
   align-items: center;
@@ -35,9 +39,9 @@ const Container = styled.button`
   }
 `;
 
-export default function AddToCartBtn() {
+export default function AddToCartBtn({ onClick }: AddToCartBtnProps) {
   return (
-    <Container>
+    <Container onClick={onClick}>
       <BagWhite />
       <span>ADICIONAR AO CARRINHO</span>
     </Container>
