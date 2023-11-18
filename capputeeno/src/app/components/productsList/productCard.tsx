@@ -21,6 +21,8 @@ const Card = styled.div`
   backdrop-filter: blur(10px);
   border-radius: 0 0 4px 4px;
 
+  transition: all 0.3s ease;
+
   cursor: pointer;
 
   img {
@@ -61,6 +63,11 @@ const Card = styled.div`
 
       padding: 0;
     }
+  }
+
+  &:hover {
+    transform: translate(-5px, -5px);
+    box-shadow: 4px 4px 7px 1px rgba(0, 0, 0, 0.3);
   }
 `;
 

@@ -6,7 +6,6 @@ import { useFilter } from "@/hooks/useFilter";
 
 const InputWithIcon = styled.div`
   position: relative;
-  width: 180px;
 
   > svg {
     position: absolute;
@@ -57,12 +56,13 @@ const PrimaryInput = styled.input`
   @media (max-width: 424px) {
     position: absolute;
     top: -20px;
+    width: 180px;
 
-    transition: all 0.3s ease;
-    transform: translateX(150%);
+    transition: all 0.5s ease;
+    transform: translateX(100%);
 
     &[data-search-is-open="true"] {
-      transform: translateX(5%);
+      transform: translateX(-100%);
       top: -20px;
     }
   }

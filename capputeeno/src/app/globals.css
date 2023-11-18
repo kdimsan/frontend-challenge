@@ -4,6 +4,7 @@
 
   --text-dark: #737380;
   --text-dark-2: #41414d;
+  --text-dark-3: #a8a8b3;
   --text-secondary: #617480;
   --selected-filter-text: #41414d;
   --shapes-dark: #09090a;
@@ -17,6 +18,7 @@
   --shapes-light: #f5f5fa;
 
   --brand-blue: #115d8c;
+  --others-green: #51b853;
 }
 
 * {

@@ -35,6 +35,7 @@ export const LogoHeader = styled.a`
   font-weight: 400;
   line-height: 60px;
   color: var(--logo-color);
+  text-decoration: none;
 
   @media (min-width: ${({ theme }) => theme.WSIZES.SM}) {
     font-size: 28px;

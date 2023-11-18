@@ -1,8 +1,9 @@
 "use client";
 import React from "react";
-import { CartIcon } from "../icons/cartIcon";
+import { CartIcon } from "../components/icons/cartIcon";
 import { useLocalStorage } from "@/hooks/useLocalStorage";
 import { styled } from "styled-components";
+import { useRouter } from "next/navigation";
 
 const CartCount = styled.span`
   width: 17px;
@@ -32,8 +33,14 @@ const Container = styled.div`
 export default function CartItem() {
   const { value } = useLocalStorage("cart-items", []);
 
+  const router = useRouter();
+
+  const handleCartPage = () => {
+    router.push("/cart");
+  };
+
   return (
-    <Container>
+    <Container onClick={handleCartPage}>
       <CartIcon />
       {value.length > 0 && <CartCount>{value.length}</CartCount>}
     </Container>

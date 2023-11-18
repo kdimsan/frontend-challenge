@@ -13,6 +13,7 @@ const Container = styled.div`
   align-items: center;
   justify-content: start;
   gap: 15px;
+
   @media (min-width: ${({ theme }) => theme.WSIZES.SM}) {
     gap: 30px;
   }
@@ -40,6 +41,12 @@ const FilterItem = styled.li<FiltersByTypeProps>`
 
   cursor: pointer;
 
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translate(-3px, -3px);
+    filter: drop-shadow(5px 5px 4px rgba(0, 0, 0, 0.5));
+  }
   @media (min-width: ${({ theme }) => theme.WSIZES.SM}) {
     font-size: 18px;
   }
